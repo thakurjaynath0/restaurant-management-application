@@ -1,0 +1,135 @@
+.nav-bar{
+    width: 100%;
+    display: flex;
+    height: 3.5rem;
+    position: fixed; 
+    top: 0;
+    background-color: var(--primaryBackground);
+    color: var(--fadedBackground);
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    /* box-shadow: 2px 4px 8px rgb(200, 200, 200); */
+    box-shadow: 2px 2px 2px rgb(100, 100, 100);
+    z-index: 1000;
+}
+.nav-bar .nav-menu{
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.nav-bar .nav-menu .menu-icon{
+    font-size: 1.5rem;
+    color: var(--fadedBackground);
+    padding: 1rem 1rem 1rem 0;
+    cursor: pointer;
+    transition: all 300ms ease;
+
+}
+.menu-icon:hover{
+    opacity: 80%;
+}
+.nav-menu .menu-items{
+    /* display: none; */
+    box-shadow: 1px 1px 1px rgb(100, 100, 100);
+    position: fixed;
+    top: 0;
+    background-color: var(--fadedBackground);
+    padding: 1rem;
+    height: 100vh;
+    left: -15rem;
+    width: 0;
+    padding-top: 4rem;
+    transition: all 500ms ease;
+
+}
+.menu-items.active{
+    display: block;
+    width: 100%;
+    left: 0rem;
+}
+.nav-menu .cross-icon{
+    color: var(--primaryBackground);
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 2rem 1.1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+.cross-icon:hover{
+    opacity: 80%;
+}
+
+.nav-menu .user-name{
+    color: var(--primaryBackground);
+    font-size: 1.5rem;
+    position: relative;
+}
+
+.user-name .line{
+    position: absolute;
+    bottom: -0.25rem;
+    font-size: 1.1rem;
+    height: 0.125rem;
+    width: 100%;
+    background-color: var(--primaryBackground);
+}
+.nav-menu .user-role{
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    opacity: 0.6;
+
+}
+.nav-menu .menu-main{
+    /* background-color: red; */
+    margin-top: 2rem;
+}
+
+.nav-bar .top-name{
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.075rem;
+}
+.cprt{
+    color: var(--primaryBackground);
+    position: fixed;
+    width: 20rem;
+    bottom: 1rem;
+}
+.nav-middle{
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+@media screen and (min-width: 650px) {
+    .nav-bar{
+        padding: 0 4rem;
+    }
+    .menu-items.active{
+        width: 60%;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+}
+@media screen and (min-width: 1000px) {
+    .nav-bar{
+        padding: 0 7rem;
+    }
+    .menu-items.active{
+        width: 40%;
+    }
+}
+@media screen and (min-width: 1300px) {
+    .nav-bar{
+        padding: 0 10rem;
+    }
+    .menu-items.active{
+        width: 30%;
+    }
+}

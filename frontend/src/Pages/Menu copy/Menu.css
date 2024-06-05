@@ -1,0 +1,138 @@
+main.menu{
+    display: block;
+    margin: 0 1rem;
+    padding: 0 0 1rem 0;
+    overflow: hidden;
+}
+
+.menu .menu-title{
+    text-align: center;
+    margin: 2rem 0 4rem 0;
+    display: block;
+    position: relative;
+    color:var(--secondaryText)
+}
+
+.menu .menu-title span{
+    position: absolute;
+    left: 1%;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.menu .menu-error{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    min-height: 500px;
+    border-radius: 10px;
+    color: red;
+    background: var(--transparentFadedBackground);
+    /* font-size: 1.8rem; */
+}
+
+.menu .menu-error svg{
+    margin:     2rem;
+}
+
+.menu .menu-header{
+    width: inherit;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items:center;
+    height: 50px;
+    margin: 2rem 0;
+    /* padding: 0 1rem; */
+    background: #ffffff;
+    color: var(--primaryBackground);
+    border-radius: 5px;
+}
+
+.menu-header .search{
+    width: 70%;
+    /* flex-grow: 1; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.menu-header .filter{
+    width: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-grow: 1;
+    align-items: center;
+    /* color: var(--fadedBackground); */
+    font-weight: bold;
+}
+
+.menu-header .search svg{
+    height: 100%;
+    padding: 15px;
+    width: 50px;
+    /* color: var(--fadedBackground); */
+    /* font-size: 1.5rem; */
+}
+
+.menu-header .search input{
+    /* flex-grow: 1; */
+    width: 80%;
+    border: none;
+    font-size: 1.2rem;
+    color: var(--primaryBackground);
+    outline: none;
+    background:inherit;
+}
+
+
+section.category-list{
+    width: inherit;
+    display:grid;
+    grid-template-columns: 100%;
+    row-gap: 2rem;
+    column-gap: 4%;
+    /* background: #000; */
+
+    /* display:flex;
+    flex-flow: row wrap; */
+}
+
+@media screen and (min-width: 700px) {
+    .menu-header .search{
+        width:87%
+    }
+    .menu-header .filter{
+        width: 13%;
+    }
+}
+
+@media screen and (min-width:850px){
+    section.category-list{
+        grid-template-columns:48% 48%;
+    }
+    main.menu{
+        margin: 0 3rem;
+    }
+}
+
+@media screen and (min-width:1400px){
+    main.menu{
+        margin: 0 8rem;
+    }
+
+    section.category-list{
+        grid-template-columns:31% 31% 30%;
+    }
+    .menu-header .search{
+        width:92%
+    }
+    .menu-header .filter{
+        width: 8%;
+    }
+}

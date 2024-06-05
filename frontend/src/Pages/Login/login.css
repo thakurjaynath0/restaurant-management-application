@@ -1,0 +1,151 @@
+
+.main-container{
+    background-color: rgb(255, 255, 255);
+}
+.login-container{
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 10rem 0 0 2rem;
+    position: relative;
+}
+.login-container .svg img{
+    height: 20rem;
+    position: absolute;
+}
+.login-container .svg-top img{
+    top: -10rem;
+    right: -15rem;
+    transform: rotate(-30deg);
+    
+}
+.login-container .svg-bottom img{
+    position: relative;
+    bottom: -6rem;
+    left: -15rem;
+    transform: rotate(150deg);
+    
+}
+.title{
+    font-size: 3rem;
+    font-weight: bold;
+}
+.tagline{
+    padding-top: 0.25rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: rgb(206, 206, 206);
+}
+
+.login-container .inner-wrapper .form-container .form-control{
+    padding: 1rem 1rem 1rem 0;
+    width: 90%;
+}
+.btn-container{
+    padding: 1rem 0 0 0;
+}
+.btn-container .login-btn{
+    background-color: #00a3a3;
+    /* background-color: brown; */
+    width: 7rem;
+    padding: 0.75rem;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 900;
+    border: none;
+    border-radius: 0.5rem;
+    transition: all 300ms ease;
+
+}
+.btn-container .login-btn:hover{
+    box-shadow: 3px 3px 6px #b8b8b8;
+    transform: translate(0.1rem, 0);
+    font-size: 0.9rem;
+    width: 6.75rem;
+    padding: 0.7rem;
+}
+.bottom-text{
+    color: rgb(206, 206, 206);
+    margin-top: 2rem;
+}
+.bottom-text .highlight{
+    color: rgb(0, 163, 163);
+    font-weight: 900;
+    padding: 0 0.25rem;
+}
+.login-error, .login-success{
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    visibility: hidden;
+}
+.login-success{
+    color: green;
+}
+.login-error{
+    color: red;
+}
+
+.login-success.active,
+.login-error.active{
+    visibility: visible !important;
+}
+@media screen and (min-width: 750px) {
+    .main-container{
+        height: 100vh;
+        background-color: rgb(245,245,245);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .login-container{
+        background-color: rgb(255, 255, 255);
+        border-radius: 0.5rem;
+        width: 45rem;
+        height: 35rem;
+        padding: 3rem 1rem;
+        box-shadow: 2px 6px 8px #b8b8b8;
+        justify-content: flex-start;
+        overflow: hidden;
+    }
+    .login-container .svg-bottom img{
+        position: absolute;
+        bottom: -12rem;
+        left: -15rem;
+        transform: rotate(150deg);
+        
+    }
+
+    .title{
+        padding-top: 3rem;
+    }
+    .title, .tagline{
+        text-align: center;
+
+    }
+    .form-control{
+        margin: auto;
+    }
+    .form-control input{
+        background-color: #ffffff;
+        width: 100%;
+    }
+    .bottom-text{
+        left: 0;
+        bottom: 1rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+    }
+    .btn-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .btn-container .login-btn{
+        font-size: 1rem;
+    }
+
+}

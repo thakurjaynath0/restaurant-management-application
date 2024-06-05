@@ -1,0 +1,95 @@
+.table-container{
+    /* margin-top: 2rem; */
+    width: 100%;
+    padding: 1rem 2rem 2rem 2rem;
+
+}
+.table-container .error{
+    width: 100%;
+    padding-top: 1rem;
+    text-align: center;
+}
+.table-title{
+    margin-top: -1.5rem;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+}
+.table-container .table-list-container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.table-list-container .table-lists{
+    min-height: 16rem;
+    width: 100%;
+    margin-top: 2rem;
+    background-color: var(--primaryBackground);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    color: white;
+    position: relative;
+    /* width: min-content; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 3px 3px 5px rgb(180, 180, 180);
+
+}
+.table-lists .add-table-icon{
+    font-size: 2rem;
+    color: var(--fadedBackground);
+    height: 4rem;
+    width: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 100%;
+    background-color: var(--fadedText);
+}
+.table-lists .form-control{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.table-lists .form-control img{
+    width: 13rem;
+    height: auto;
+}
+.table-lists .form-control input{
+    padding-left: 0.5rem;
+}
+@media screen and (min-width: 500px) {
+    .table-title{
+        margin-bottom: 1rem;
+    }
+    .table-list-container .table-lists{
+        width: 40%;
+        margin: 1rem 5% 1rem 0;
+    }
+}
+@media screen and (min-width: 850px) {
+    .table-container{
+        width: 80%;
+        margin: auto 10%;
+    }
+    .table-list-container .table-lists{
+        width: 30%;
+        margin: 1rem 2.5% 1rem 0;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .table-list-container .table-lists{
+        width: 20%;
+        margin: 1rem 5% 1rem 0;
+    }
+}
+
+.table-lists .loader{
+    border: 4px solid #f3f3f3;
+    border-left: 4px solid var(--primaryBackground);
+}

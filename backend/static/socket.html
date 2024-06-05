@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sockets</title>
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+    <form id="sockets">
+        <input type="text" id="order-id">
+        <select name="type" id="emit-type">
+            <option value="order:create">Create Order</option>
+            <option value="order:update">Update Order</option>
+            <option value="order:cancel">Cancel Order</option>
+            <option value="order:complete">Complete Order</option>
+            <option value="bill:settle">Settle Bill</option>
+        </select>
+        <button type="submit">Emit</button>
+    </form> <br><br>
+    <div id="messages">
+        <fieldset style="max-width: 450px;min-height: 200px;">
+            <legend>Socket Messages</legend>
+        </fieldset>
+    </div>
+</body>
+<script>
+    const socket = io();
+    const form = document.querySelector('#sockets');
+
+    form.onsubmit = function(e){
+        e.preventDefault();
+        socket.emit(e.target[1].value,e.target[0].value);
+        document.querySelector('#messages fieldset').innerHTML += `<p>${e.target[1].value} -- ${e.target[0].value}</p><hr>`
+    }
+
+    const events = ['order:create', 'order:update', 'order:cancel', 'order:complete', 'bill:create', 'bill:settle'];
+    events.forEach( item => {
+        socket.on(item, (data) => {
+            document.querySelector('#messages fieldset').innerHTML += `<p>${item} -- ${data}</p><hr>`
+        })
+    })
+</script>
+</html>

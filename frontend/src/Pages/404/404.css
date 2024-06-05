@@ -1,0 +1,47 @@
+.e404{
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+.err-num{
+    font-weight: bold;
+    font-size: 4rem;
+    color: var(--primaryBackground);
+}
+.err-not-found{
+    margin-top: 0.5rem;
+    font-weight: bold;
+    font-size: 1.5rem;
+    
+}
+.err-text{
+    margin-top: 1rem;
+    
+}
+.err-btn{
+    margin-top: 1rem;
+    background-color: var(--primaryBackground);
+    color: white;
+    width: 10rem; 
+}
+@media screen and (min-width: 650px) {
+
+    .err-num{
+        font-size: 6rem;
+    }
+    .err-not-found{
+        font-size: 3.5rem;
+        
+    }
+    .err-text{
+        font-size: 1.25rem;
+    }
+    .err-btn{
+        font-size: 1.25rem;
+
+    }
+}

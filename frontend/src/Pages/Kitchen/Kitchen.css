@@ -1,0 +1,160 @@
+.kitchen {
+    width: 100%;
+    /* background: #000; */
+    padding: 2rem;
+}
+
+.kitchen-header {
+    padding: 0 0 1rem 0;
+    margin: 0 0 2rem 0;
+    display:grid;
+    grid-template-areas:'back heading heading heading heading';
+    color:var(--primaryBackground);
+    font-weight: 900;
+    font-size: 2rem;
+}
+
+.kitchen-header-back{
+    grid-area:back;
+    text-align: left;
+    z-index: 100;
+}
+.kitchen-header-back svg {
+    cursor: pointer;
+}
+.kitchen-header-title{
+    grid-area: heading;
+    text-align: center;
+    width: 100%;
+    transform: translateX(-12.5%);
+}
+
+.kitchen-order-wrapper {
+    width: 100%;
+    /* grid-template-columns:repeat(auto-fit, minmax(350px, 1fr));  */
+    /* display: grid;
+    grid-template-columns: 20% 20% 20% 20%;
+    column-gap: 6%;
+    row-gap: 2rem; */
+    /* grid-template-rows:auto 1fr; */
+    /* grid-auto-rows: auto; */
+    /* display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around; */
+}
+
+.kitchen-order {
+    background: rgb(228, 227, 227);
+    padding: 1rem;
+    border-radius: 0.3rem;
+    color: var(--primaryBackground);
+    font-size: 1.2rem;
+    font-weight: bold;
+    display:grid;
+    grid-template-areas: 
+    'order-number order-number order-tables'
+    'order-items order-items order-items'
+    'order-note order-note order-note';
+    /* grid-row-end:span 3; */
+    grid-auto-rows: min-content;
+    grid-row: 1 / span -1;
+}
+
+.kitchen-order-number {
+    grid-area: order-number;
+    font-weight: 900;
+}
+
+.kitchen-order-tables {
+    grid-area: order-tables;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 1.2rem;
+    text-align: right;
+}
+
+
+.kitchen-order-items {
+    grid-area: order-items;
+    color: var(--secondaryText);
+}
+
+.kitchen .kitchen-loader-svg {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.kitchen .kitchen-loader-svg svg {
+    margin: auto auto;
+    animation:loader ease infinite 0.8s;
+    font-size: 4rem;
+    font-weight: 900;
+    color: var(--primaryBackground);
+}
+
+
+.kitchen-order-note {
+    background: #ffffff;
+    grid-area: order-note;
+    padding: 0.5em 0.8rem;
+    font-size: 1.1rem;
+    border-radius: 0.3rem;
+    color: var(--secondaryText);
+}
+
+@media screen and (max-width: 400px) {
+    .kitchen-order-wrapper {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    }
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) { 
+    .kitchen-order-wrapper {
+        grid-template-columns: 100%;
+    }
+    .kitchen {
+        padding:2rem 2rem;
+    }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .kitchen-order-wrapper {
+        grid-template-columns: 100%;
+    }
+    .kitchen {
+        padding:2rem 2rem;
+    }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .kitchen-order-wrapper {
+        grid-template-columns: 45% 45%;
+    }
+
+    .kitchen {
+        padding:2rem 4rem;
+    }
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .kitchen-order-wrapper {
+        grid-template-columns: 30% 30% 30%;
+    }
+    .kitchen {
+        padding:2rem 6rem;
+    }
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1500px) {
+    .kitchen-order-wrapper {
+        grid-template-columns: 20% 20% 20% 20%;
+    }
+
+    .kitchen {
+        padding:2rem 8rem;
+    }
+}

@@ -1,0 +1,23 @@
+.menu-item-skeleton {
+    max-width: 250px;
+    background: white;
+    overflow: hidden;
+}
+
+.menu-item-skeleton .name {
+    width: 150px;
+    height: 30px;
+    margin: 0.5rem;
+    background-image: linear-gradient(-45deg,#dcdbdb,#ffffff,#dcdbdb,#ffffff);
+    background-size: 300% 100%;
+    animation: animateBg 1.5s linear infinite;
+}
+
+.menu-item-skeleton .image {
+    width: 250px;
+    height: 250px;
+    margin: 2rem 0 0 0;
+    background-image: linear-gradient(-45deg,#dcdbdb,#ffffff,#dcdbdb,#ffffff);
+    background-size: 450% 100%;
+    animation: animateBg 1.5s linear infinite;
+}

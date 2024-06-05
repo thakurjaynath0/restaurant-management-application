@@ -1,0 +1,31 @@
+.select-table.edit{
+    position: relative;
+}
+.wrapper .small-error{
+    position: absolute;
+    bottom: -1rem;
+    left: 0;
+    font-weight: bold;
+    color: rgb(228, 0, 0);
+}
+.table-card{
+    cursor: pointer;
+    margin: 1rem 1rem 1rem 0;
+    background-color: rgba(224, 224, 224, 0.5);
+    padding: 1rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #555555;
+    border-radius: 0.25rem;
+    height: 3.75rem;
+    min-width: 4.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.table-card.active{
+    background-color: #555555;
+    color: #ffffff;
+    
+}

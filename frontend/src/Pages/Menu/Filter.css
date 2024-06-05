@@ -1,0 +1,180 @@
+.filter-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(255,255,255,0.5);
+    z-index: 100;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.filter-container .filter-wrapper {
+    width: 30%;
+    background: var(--secondaryText);
+    padding: 1rem;
+    position: relative;
+    border-radius: 0.3rem;
+    overflow: hidden;
+}
+
+.filter-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 40px;
+    width: 40px;
+    background: red;
+    font-size: 1.5rem;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: white;
+    border-radius: 0.3rem;
+    border: 3px solid red;
+    transition: all 0.3s ease;
+}
+.filter-close:hover {
+    background:none;
+    color: red;
+}
+
+.filter-close svg {
+    stroke-width: 1.5rem;
+}
+
+.filter-form-category {
+    grid-area:category
+}
+
+.filter-form-price-low {
+    grid-area:price-low;
+}
+
+.filter-form-price-high {
+    grid-area:price-high;
+}
+
+.filter-form-submit {
+    grid-area:submit;
+}
+
+.filter-form-reset {
+    grid-area:reset;
+}
+
+.filter-form {
+    display: grid;
+    grid-template-areas:'category category category category''price-low price-low price-high price-high''submit submit reset reset';
+    padding:1rem;
+    color: white;
+    gap: 2rem;
+    font-weight: bold;
+}
+
+.filter-form-category {
+    /* margin: 1rem 0 2rem 0; */
+    font-size: 1.1rem;
+}
+
+.filter-form-category select {
+    height: 2.5rem;
+    width: 100%;
+    margin: 0.1rem 0 0 0;
+    font-size: 1rem;
+    font-weight: bold;
+    outline: none;
+    padding: 0 1rem;
+    /* border-radius: 0.3rem; */
+}
+
+
+.filter-form-price-low, .filter-form-price-high{
+    font-size: 1.1rem;
+}
+
+.filter-form-price-high > input , .filter-form-price-low > input {
+    width: 100%;
+    height: 2.5rem;
+    padding: 0 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.filter-form-submit, .filter-form-reset {
+    height: 3rem;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 0.3rem;
+    cursor:pointer;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.filter-form-submit {
+    background: green;
+    border: 3px solid green;
+}
+
+.filter-form-reset {
+    background:var(--primaryBackground);
+    border: 3px solid var(--primaryBackground);
+}
+
+.filter-form-submit:hover, .filter-form-reset:hover {
+    background:none;
+}
+
+
+
+@media only screen and (max-width: 600px) { 
+    .filter-wrapper {
+        width: 100% !important;
+        padding-bottom:5rem !important;
+        padding-top: 2rem !important;
+        border-radius: 2rem 2rem 0 0 !important;
+        animation:popup 0.3s ease 1;
+    }
+
+    .filter-container {
+        align-items: end;
+    }
+
+    .filter-close {
+        top: 0.2rem;
+        right: 0.2rem;
+        border-radius: 0.2rem 2rem 0.2rem 0.2rem;
+    }
+
+    .filter-close svg {
+        transform:translate(-0.1rem, 0.1rem)
+    }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .filter-wrapper {
+        width: 60% !important;
+    }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .filter-wrapper {
+        width: 50% !important;
+    }
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .filter-wrapper {
+        width: 40% !important;
+    }
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .filter-wrapper {
+        width: 30% !important;
+    }
+}

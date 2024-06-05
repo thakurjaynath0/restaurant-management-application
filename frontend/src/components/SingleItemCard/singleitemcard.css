@@ -1,0 +1,25 @@
+.single-order{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    color: var(--primaryBackground);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    cursor:  pointer;
+}
+.single-order-left{
+    width: 50%;
+    word-wrap: break-word;
+
+
+}
+.single-order-left .single-order-name{
+    font-weight: bold;
+
+}
+.single-order-left .single-order-price{
+    opacity: 0.8;
+    font-size: 0.9rem;
+    padding-top: 0.25rem;
+}

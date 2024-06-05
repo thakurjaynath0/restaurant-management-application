@@ -1,0 +1,852 @@
+{
+	"info": {
+		"_postman_id": "fc22e01b-8830-46a4-ac51-d0c294b35655",
+		"name": "Restaurant Management Mini",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "User Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"Nikhil_Super\",\n    \"password\":\"random1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/users/auth/login/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"users",
+								"auth",
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout ",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/users/auth/logout/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"users",
+								"auth",
+								"logout",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Nikhil Thakur\",\n    \"username\":\"Nikhil7\",\n    \"password\":\"rando1234\",\n    \"position\":\"waiter\",\n    \"staff\":\"6206aa8ac7c76c770d044f29\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/users/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"users",
+								""
+							]
+						},
+						"description": "Can be done only by admin and superuser ."
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Users ",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/users/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User ",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Ram (Updated)\",\n    \"username\":\"staff\",\n    \"isAllowedToLogin\":\"false\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/users/621e470c4deb319390de92da",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"users",
+								"621e470c4deb319390de92da"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single User ",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/users/621e470c4deb319390de92da",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"users",
+								"621e470c4deb319390de92da"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Current User ",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/users/me",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"users",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User ",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/users/621e470c4deb319390de92da",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"users",
+								"621e470c4deb319390de92da"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Menu",
+			"item": [
+				{
+					"name": "MenuItem",
+					"item": [
+						{
+							"name": "Get All Menu Items ",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/menu/",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"menu",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Single Menu Item",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/menu/622647220d1b0568a1200316/",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"menu",
+										"622647220d1b0568a1200316",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Menu Item",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\":\"Golden Oak\",\n    \"price\":1400,\n    \"category\":\"622cee1bde4b54d1bc473e35\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/menu/",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"menu",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Single Menu Item",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"price\":690\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/menu/622647220d1b0568a1200316/",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"menu",
+										"622647220d1b0568a1200316",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Single Menu Item",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/menu/622647220d1b0568a1200317/",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"menu",
+										"622647220d1b0568a1200317",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search Menu Item",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/menu/search?name=beer ",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"menu",
+										"search"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "beer "
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Category",
+					"item": [
+						{
+							"name": "Get All Menu Category",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/menu/category/",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"menu",
+										"category",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Menu Category",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\":\"Drinks & Beverages\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/menu/category/",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"menu",
+										"category",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Single Category",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\":\"Drinks & Beverages\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/menu/category/622644b05d34c873d1052303/",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"menu",
+										"category",
+										"622644b05d34c873d1052303",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Single Category",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/menu/category/622644b05d34c873d1052303/",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"menu",
+										"category",
+										"622644b05d34c873d1052303",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Category Items ",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/menu/categoryItems/622cee1bde4b54d1bc473e35/",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"menu",
+										"categoryItems",
+										"622cee1bde4b54d1bc473e35",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Single Category",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/menu/category/622644b05d34c873d1052303/",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"menu",
+										"category",
+										"622644b05d34c873d1052303",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Update Order",
+					"item": [
+						{
+							"name": "Add Table",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"table\":\"6234a4f60e27147e9aa2769a\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/order/6234c9cade46d90eeb0c40b9/?action=add_table",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"order",
+										"6234c9cade46d90eeb0c40b9",
+										""
+									],
+									"query": [
+										{
+											"key": "action",
+											"value": "add_table"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Remove Table",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"table\":\"6236bedbff63ed21ef23e167\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/order/6234c9cade46d90eeb0c40b9/?action=remove_table",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"order",
+										"6234c9cade46d90eeb0c40b9",
+										""
+									],
+									"query": [
+										{
+											"key": "action",
+											"value": "remove_table"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Item",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"item\":\"622cee34de4b54d1bc473e3d\",\n    \"quantity\":\"4\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/order/6234c9cade46d90eeb0c40b9/?action=add_item",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"order",
+										"6234c9cade46d90eeb0c40b9",
+										""
+									],
+									"query": [
+										{
+											"key": "action",
+											"value": "add_item"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Remove Item",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"item\":\"6235b3b6e1e85c1d6f15db7d\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/order/6234c9cade46d90eeb0c40b9/?action=remove_item",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"order",
+										"6234c9cade46d90eeb0c40b9",
+										""
+									],
+									"query": [
+										{
+											"key": "action",
+											"value": "remove_item"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Item",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"item\":\"6234c9cade46d90eeb0c40b9\",\n    \"status\":\"completed\",\n    \"quantity\":3,\n    \"id\": \"62357d747c085bc850c5675a\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/order/6234c9cade46d90eeb0c40b9/?action=update_item",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"order",
+										"6234c9cade46d90eeb0c40b9",
+										""
+									],
+									"query": [
+										{
+											"key": "action",
+											"value": "update_item"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get All Orders ",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/order/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"order",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"tables\":[\n    {\"table\":\"622ced98de4b54d1bc473e16\"},\n    {\"table\":\"622ced9fde4b54d1bc473e19\"}\n    ],\n\"items\":[\n    {\n        \"item\":\"622cee24de4b54d1bc473e39\",\n        \"quantity\":1\n    }\n]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/order/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"order",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get single order",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/order/6234c9cade46d90eeb0c40b9",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"order",
+								"6234c9cade46d90eeb0c40b9"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Table",
+			"item": [
+				{
+					"name": "Get All Tables",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"table\":\"2A\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/table/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"table",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Table",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"number\":\"1C\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/table/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"table",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Table ",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"number\":\"1A\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/table/62374ec380d2d107e815d255/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"table",
+								"62374ec380d2d107e815d255",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get single Table",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/table/622cd3b3820ad91f029d88ee/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"table",
+								"622cd3b3820ad91f029d88ee",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Single Table",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/table/622cd3b3820ad91f029d88ee/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"table",
+								"622cd3b3820ad91f029d88ee",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

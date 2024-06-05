@@ -1,0 +1,140 @@
+.single-item{
+    margin: 1rem 0;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.15rem;
+}
+.single-item .single-item-left{
+    width: 50%;
+}
+.single-item .single-item-middle{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+.single-item-middle span:nth-child(1){
+    width: max-content;
+    padding-left: 1rem;
+}
+.single-item .single-item-right{
+    width: 20%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.single-item .order-item-edit{
+    width: 5rem;
+    background-color: var(--primaryBackground);
+    color: var(--fadedBackground);
+}
+
+/* absolute container */
+.absolute-wrapper{
+    background-color: rgba(83, 83, 83, 0.3);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    z-index: 3;
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+.absolute-wrapper.active{
+    display: block;
+}
+.absolute-container{
+    z-index: 4;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 0;
+    opacity: 0;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    padding: 1.25rem;
+    background-color: var(--primaryBackground);
+    transition: all 300ms ease;
+}
+.absolute-container.active{
+    height: 40%;
+    opacity: 1;
+}
+.absolute-container .absolute-name{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 0.5rem;
+
+}
+.absolute-quantity{
+    font-size: 1.15rem;
+    margin-top: 0.5rem;
+}
+.quantity-title{
+    font-weight: bold;
+    color: var(--fadedBackground);
+    margin-top: 1rem;
+}
+.absolute-quantity input{
+    border: none;
+    outline: none;
+    padding: 0.5rem;
+    width: 5rem;
+    border-radius: 0.3rem;
+    text-align: center;
+    font-size: 1.15rem;
+    font-weight: bold;
+}
+.absolute-quantity span{
+    color: var(--fadedBackground);
+    padding-left: 1rem;
+}
+.absolute-container .button-container{
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.absolute-container .button-container button{
+    margin-right: 1rem;
+    width: 5rem;
+}
+.absolute-container .save-btn{
+    background-color: green;
+    color: var(--fadedBackground);
+}
+.absolute-container .delete-btn{
+    background-color: rgb(175, 4, 4);
+    color: var(--fadedBackground);
+}
+@media screen and (min-width: 750px) {
+    .absolute-container{
+        z-index: 4;
+        position: absolute;
+        bottom: 40%;
+        left: 30%;
+        right: 0;
+        width: 25%;
+        border-radius: 2rem;        
+        background-color: var(--primaryBackground);
+        transition: all 300ms ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        display: none;
+    }
+    .absolute-container.active{
+        opacity: 1;
+        height: fit-content;
+        display: flex;
+    }
+    
+}

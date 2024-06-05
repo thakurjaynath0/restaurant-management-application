@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="bill.css"> -->
+    <style>
+      *{
+				font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+      }
+      body {
+        width: 100vw;
+        overflow-x: hidden;
+        /* font-family: sans-serif; */
+				font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+      }
+      .bill-container {
+        width: 90%;
+        margin: 2rem auto 0 auto;
+        position: relative;
+      }
+      .bill-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .header-logo img {
+        height: 4rem;
+      }
+      .bill-header .header-details {
+        display: flex;
+        flex-direction: column;
+      }
+      .header-details .company-name {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 0.25rem;
+      }
+      .company-address,
+      .company-phone {
+        color: #666;
+        font-weight: bold;
+        font-size: 0.8rem;
+      }
+      .bill-main {
+        margin-top: 2rem;
+      }
+      .bill-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        /* width: 40%; */
+        margin-bottom: 2rem;
+        font-weight: bold;
+        color: #888;
+      }
+      .seperator {
+        margin-top: 0.25rem;
+        width: 100%;
+        height: 3px;
+        background-color: rgba(141, 141, 141, 0.5);
+      }
+      .bill-body table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.9rem;
+      }
+      .table-header {
+        font-size: 1rem;
+        font-weight: 700;
+        background-color: rgb(230, 230, 230);
+      }
+      td,
+      tr,
+      th {
+        text-align: center;
+        border: 1px solid #000;
+        padding: 0.5rem;
+      }
+      .dark td:nth-child(1) {
+        font-weight: 900;
+        font-size: 1rem;
+        text-align: left;
+        padding-left: 1rem;
+      }
+
+      .disclaimer, .visit {
+        color: #777;
+        padding: 1rem 0 0 0;
+        margin-top: auto;
+        /* font-weight: bold; */
+      }
+      .qr img{
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+        margin: 1rem 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bill-container">
+      <div class="bill-header">
+        <div class="header-details">
+          <span class="company-name">Himalayan cafe</span>
+          <span class="company-address">Birgunj, Nepal</span>
+          <span class="company-phone">Phone: 9823451260</span>
+        </div>
+        <div class="header-logo">
+          <img src="{{SETTINGS.DOMAIN}}{{SETTINGS.STATIC_URL}}/images/logo.png" alt="Himalayan Cafe" />
+        </div>
+      </div>
+      <div class="seperator"></div>
+
+      <div class="bill-main">
+        <div class="bill-title">
+          <div class="order-number">Order: #{{orderNumber}}</div>
+          <div class="date">Date: {{orderDate}}</div>
+        </div>
+
+        <div class="bill-body">
+          <table class="bill-table">
+            <tr class="table-header">
+              <th>Item</th>
+              <th>Quantity</th>
+              <th>Price</th>
+              <th>total</th>
+            </tr>
+
+            {{#each orderItems}}
+              <tr>
+                <td>{{this.itemName}}</td>
+                <td>{{this.itemQuantity}}</td>
+                <td>Rs {{this.itemPrice}}</td>
+                <td>Rs {{this.itemTotal}}</td>
+              </tr>
+            {{/each}}
+            
+            <tr class="dark">
+              <td colspan="3">sub total</td>
+              <td>Rs {{subTotal}}</td>
+            </tr>
+            <tr class="dark">
+              <td colspan="3">Tax</td>
+              <td>Rs {{taxAmount}}</td>
+            </tr>
+            <tr class="dark">
+              <td colspan="3">total</td>
+              <td>Rs {{total}}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="visit">
+        Pleasure serving you :)   
+      </div>
+      <div class="qr">
+        <img height="150" src="{{qr}}" alt="">
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,141 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+:root{
+    --primaryText: #222;
+    --secondaryText: #444;
+    --fadedText: #777;
+    /* --primaryBackground: #00a3a3; */
+    --primaryBackground: #2460b9;
+    --fadedPrimaryBackground: #4056a0cc;
+    --transparentPrimaryBackground: rgba(64, 86, 160, 0.6);
+    --fadedBackground: #eaf4f7;
+    --transparentFadedBackground:#ffffffbb;
+    --fontLargest: 2.5rem;
+    --fontLarge: 1.5rem;
+    --fontMeiumd: 1.2rem;
+    --fontSmall: 1rem;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'lato', sans-serif;
+    text-decoration: none;
+    user-select: none;
+}
+body{
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+    /* height: 100vh; */
+    /* width: 100vw; */
+    /* overflow: hidden !important; */
+    background-color: var(--fadedBackground);
+    overflow-x: hidden;
+
+}
+.normal{
+    color: var(--fadedText); 
+}
+.faded{
+    color: var(--fadedText);
+}
+.primary{
+    color: var(--primaryBackground);
+}
+button{
+    cursor: pointer;
+}
+.seperator{
+    height: 3px;
+    width: 100%;
+    background-color: rgba(230, 230, 230, 0.5);
+    margin: 0.25rem 0;
+    border-radius: 0.5rem;
+}
+.back-top{
+    display: flex;
+    align-items: center;
+    margin: 1.5rem 1rem 1.5rem 1rem;
+    color: var(--primaryBackground);
+
+}
+.back-top svg{
+    color: var(--primaryBackground);
+    font-size: 2rem;
+}
+.back-top .back-title{
+    text-align: center;
+    width: 80%;
+    font-size: 2rem;
+    font-weight: bold;
+    
+}
+
+/* css about the form container */
+.form-container{
+    padding-top: 1rem;
+}
+.form-container .form-control{
+    position: relative;
+    padding: 1rem 0;
+
+}
+.form-control svg{
+    position: absolute;
+    top: 1.75rem;
+    left: 0.5rem;
+    color: rgb(161, 161, 161);
+}
+.form-control input{
+    padding: 0.75rem 2rem;
+    border-radius: 0.5rem;
+    background-color: #f8f8f8;
+    width: 100%;
+    border: 2px solid #f2f2f2;
+    /* font-size: 1rem; */
+    font-weight: bold;
+    color: #343434;
+}
+.form-control input::placeholder{
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: rgb(161, 161, 161);
+}
+.form-control .error{
+    position: absolute;
+    white-space: nowrap;
+    bottom: -0.1rem;
+    left: 0;
+    /* font-size: 0.75rem/; */
+    font-weight: 700;
+    color: red;
+    display: none;
+}
+
+.form-control .error.active{
+    display: inline-block;
+}
+
+/* back icon */
+.back-icon{
+    font-size: 1.5rem;
+    width: fit-content;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+}
+
+
+@media screen and (min-width: 750px) {
+        .back-icon{
+            font-size: 2rem;
+            font-weight: bolder;
+        }
+        .back-top{
+            margin: 1rem 10% 3rem 10%;
+
+        }
+        .back-top .back-title{
+            width: 95%;
+        }
+}

@@ -1,0 +1,126 @@
+.user-card{
+    /* margin: 0 auto 0 0; */
+    background: #fff;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 14px 1px rgba(191,185,191,1);
+    -moz-box-shadow: 0px 0px 14px 1px rgba(191,185,191,1);
+    box-shadow: 0px 0px 14px 1px rgba(191,185,191,1);
+    position: relative;
+    text-transform: capitalize;
+    overflow: hidden;
+}
+
+.user-card-image{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    /* padding: 0.5rem; */
+}
+
+.user-card-image img{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    /* size: contain; */
+}
+
+.user-card-name{
+    width: 100%;
+    text-align: center;
+    padding: 0 0 1rem 0;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--primaryBackground);
+    /* color: var(--secondaryText); */
+}
+
+.user-card-position{
+    width: 100%;
+    text-align: center;
+    color: var(--fadedText);
+    margin-top: -0.5rem;
+    font-size: 1.1rem;
+}
+
+.user-card .edit{
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 0.7rem;
+    cursor: pointer;
+    background: var(--primaryBackground);
+    /* background:rgb(84, 128, 84); */
+    color: var(--fadedBackground);
+    transition:all 0.2s ease;
+    border-bottom-left-radius: 0.5rem;
+    font-weight: bold;
+}
+
+.user-card .edit:hover{
+    background: var(--secondaryText);
+    transform:scale(1.2)
+}
+
+.user-card .edit:active{
+    transform:scale(0.95)
+}
+
+.user-card .badge{
+    position: absolute;
+    left:0;
+    top:0;
+    font-size: 1.75rem;
+    padding: 0.5rem;
+    /* transform:rotate(-30deg); */
+}
+
+.user-card .badge.staff{
+    display: none;
+}
+
+.user-card .badge.admin{
+    color: rgb(255, 123, 0);
+}
+
+.user-card .badge.superuser{
+    color: var(--primaryBackground);
+}
+
+.user-add-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.user-add-card span{
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 1.5rem 0 0 0;
+    color: var(--primaryBackground);
+
+}
+
+.user-add-card svg{
+    font-size: 3.7rem;
+    padding: 1rem;
+    color: var(--fadedBackground);
+    background: var(--primaryBackground);
+    border-radius: 50%;
+    cursor: pointer;
+    border:2px solid var(--primaryBackground);
+    transition: background 0.2s ease-in-out, transform 0.1s ease;
+
+}
+
+.user-add-card svg:hover{
+    background: none;
+    color: var(--primaryBackground);
+}
+
+.user-add-card svg:active{
+    transform: scale(0.9);
+}

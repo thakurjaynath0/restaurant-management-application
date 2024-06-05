@@ -1,0 +1,31 @@
+/* loader */
+.loader-main{
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.loader-main .loader-container .loader {
+    border: 8px solid var(--fadedBackground);
+    border-radius: 50%;
+    border-top: 8px solid var(--primaryBackground);
+    border-right: 8px solid var(--primaryBackground);
+    border-bottom: 8px solid var(--primaryBackground);
+    width: 4rem;
+    height: 4rem;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+  }
+  
+
+  /**/
+  /* Safari */
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

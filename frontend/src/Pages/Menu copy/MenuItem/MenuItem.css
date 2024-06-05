@@ -1,0 +1,114 @@
+.category-list .category .category-items > .item, .item-edit{
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.5rem;
+    font-size: 1.15rem;
+    color: var(--fadedBackground);
+    cursor: pointer;
+}
+
+.category .category-items .item.hidden{
+    display: none;
+}
+
+.category .category-items .item:hover{
+    background:rgba(128, 128, 128, 0.5);
+}
+
+.category .category-items .item-edit > input , button{
+    height: 40px;
+    font-size: 1rem;
+    padding:0.5rem;
+    background: #fff;
+    border: none;
+    border-radius: 5px;
+    color: var(--secondaryText);
+    outline:none;
+    transition: all 0.2s ease;
+}
+
+.category .category-items .item-edit > button{
+    cursor: pointer;
+}
+
+.category .category-items .item-edit #cancel, 
+.category .category-items .item-edit #save, 
+.category .category-items .item-edit #delete{
+    width: 8%;
+}
+
+.category .category-items .item-edit > #name{
+    width: 45%;
+}
+
+.category .category-items .item-edit > #price{
+    width: 25%;
+}
+
+.category .category-items .item-edit #cancel{
+    background: gray;
+    border: 2px solid gray;
+    color: var(--secondaryBackground);
+}
+
+.category .category-items .item-edit #save{
+    background: #39a81d;
+    border: 2px solid #38a81d;
+    color: var(--secondaryBackground);
+}
+
+.category .category-items .item-edit #delete{
+    background: orangered;
+    border: 2px solid orangered;
+    color: var(--secondaryBackground);
+}
+
+.category .category-items .item-edit button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.category .category-items .item-edit button:hover{
+    transform:scale(1.1);
+}
+
+.category .category-items .item-edit button:active{
+    transform:scale(1);
+}
+
+.category .category-items .item-edit.error{
+    margin:0 auto!important;
+    font-size: 1rem;
+    padding: 0 0.8rem; 
+    color: orangered;
+    white-space: pre-wrap;
+}
+
+.category .category-items .item-edit.loading{
+    cursor: wait;
+    opacity:0.4;
+}
+
+.category .category-items .item-edit.loading *{
+    cursor: not-allowed !important;
+    pointer-events:none;
+}
+
+@media screen and (max-width:550px){
+    .category .category-items .item-edit #cancel, 
+    .category .category-items .item-edit #save, 
+    .category .category-items .item-edit #delete{
+        width: 12%;
+    }
+    
+    .category .category-items .item-edit > #name{
+        width: 39%;
+    }
+    
+    .category .category-items .item-edit > #price{
+        width: 19%;
+    }
+}

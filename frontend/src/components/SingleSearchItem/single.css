@@ -1,0 +1,21 @@
+.single-search-item-container{
+    background-color: white;
+    color: var(--primaryBackground);
+    margin-bottom: 0.25rem;
+    padding: 1rem 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    opacity: 0.8;
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+.single-search-item-container:hover{
+    opacity: 0.5;
+}
+
+.single-search-item-container .search-price{
+    font-weight: lighter;
+}

@@ -1,0 +1,27 @@
+.menu-item{
+    background-color: var(--primaryBackground);
+    color: var(--fadedBackground);
+    display: flex;
+    height: 2.5rem;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    /* justify-content: center; */
+    position: relative;
+    padding-left: 0.5rem;
+    transition: all 300ms ease;
+    cursor: pointer;
+    border-radius: 3px;
+    
+}
+
+.menu-item .menu-content{
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    letter-spacing: 0.05rem;
+    cursor: pointer;
+
+}
+.menu-item:hover{
+    opacity: 0.95;
+}

@@ -1,0 +1,357 @@
+.bill-detail {
+    width: 100%;
+    /* background: #000; */
+    padding: 2rem 10rem;
+}
+
+.bill-detail-header {
+    padding: 0 0 1rem 0;
+    margin: 0 0rem 2rem 0rem;
+    display:grid;
+    grid-template-areas:'back heading heading heading heading';
+    color:var(--primaryBackground);
+    font-weight: 900;
+    font-size: 2rem;
+}
+
+.bill-detail-header-back{
+    grid-area:back;
+    text-align: left;
+    z-index: 100;
+}
+.bill-detail-header-back svg {
+    cursor: pointer;
+}
+.bill-detail-header-title{
+    grid-area: heading;
+    text-align: center;
+    width: 100%;
+    transform: translateX(-12.5%);
+}
+
+.bill-detail-wrapper {
+    background: white;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    /* grid-template-columns: 60% 30%; */
+    column-gap: 10%;
+    row-gap: 3rem;
+    padding: 1rem;
+    border-radius: 0.3rem;
+    /* margin: 0 5rem; */
+}
+
+.bill-detail-details {
+    display: grid;
+    grid-template-areas:
+        'bill-detail-order-number bill-detail-order-date'
+        'bill-detail-order-tables bill-detail-order-status'
+        'bill-detail-settled-by bill-detail-settled-by'
+        'bill-detail-order-items bill-detail-order-items'
+        'bill-detail-order-subtotal bill-detail-order-subtotal'
+        'bill-detail-order-tax bill-detail-order-tax'
+        'bill-detail-order-service-charge bill-detail-order-service-charge'
+        'bill-detail-order-discount bill-detail-order-discount'
+        'bill-detail-order-total bill-detail-order-total'
+    ;
+    row-gap: 0px;
+    /* grid-auto-rows: min-content; */
+}
+
+.bill-detail-order-number {
+    grid-area:bill-detail-order-number;
+}
+
+.bill-detail-order-date {
+    grid-area:bill-detail-order-date;
+}
+
+.bill-detail-order-tables {
+    grid-area:bill-detail-order-tables;
+}
+
+.bill-detail-order-status {
+    grid-area:bill-detail-order-status;
+}
+
+.bill-detail-settled-by {
+    grid-area: bill-detail-settled-by;
+}
+
+.bill-detail-order-items {
+    grid-area:bill-detail-order-items;
+    position: relative;
+}
+
+.bill-detail-order-subtotal {
+    grid-area:bill-detail-order-subtotal;
+}
+
+.bill-detail-order-tax {
+    grid-area:bill-detail-order-tax;
+}
+
+.bill-detail-order-service-charge {
+    grid-area:bill-detail-order-service-charge;
+}
+
+.bill-detail-order-discount {
+    grid-area:bill-detail-order-discount;
+}
+
+.bill-detail-order-total{
+    grid-area:bill-detail-order-total;
+}
+
+/* ----------------------------------------------- */
+.bill-detail-order-number {
+    margin: 0.5rem 0;
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: var(--primaryBackground);
+}
+.bill-detail-order-date{
+    margin: 0.5rem 0;
+    text-align: right;
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--fadedText);
+}
+.bill-detail-order-tables {
+    margin: 1.5rem 0;
+    text-align: left;
+    font-size: 1.3rem;
+    font-weight: 900;
+    color: var(--fadedText);
+}
+
+.bill-detail-order-tables span {
+    margin:0 0.4rem 0 0;
+}
+
+.bill-detail-order-status {
+    margin: 1.5rem 0;
+    text-align: right;
+    text-transform:capitalize;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.bill-detail-order-status span {
+    padding: 0.3rem 2rem;
+    border-radius: 1rem;
+}
+
+.bill-detail-order-status.settled > span {
+    /* background:green; */
+    color: green;
+    border: 3px solid green;
+}
+
+.bill-detail-order-status.pending > span {
+    /* background: red; */
+    border: 3px solid red;
+    color: red;
+}
+
+.bill-detail-settled-by {
+    font-size: 1rem;
+    color: green;
+    font-weight: bold;
+    text-align: right;
+    padding: 0 0.5rem;
+    margin: -1rem 0 0.5rem 0;
+}
+
+.bill-detail-order-items::after, .bill-detail-order-items::before {
+    content: "";
+    position: absolute;
+    left:0;
+    height: 2px;
+    width: 100%;
+    background: var(--fadedText);
+    /* margin: 0 0 4rem 0; */
+}
+
+.bill-detail-order-items::before {
+    top: 0;
+}
+.bill-detail-order-items::after{
+    bottom: 0;
+}
+
+
+.bill-detail-order-items-item, .bill-detail-order-items-heading {
+    display: grid;
+    grid-template-columns:50% 15% 15% 15%;
+    column-gap:1.5%;
+    row-gap:0;
+    text-align: right;
+    margin: 1rem 0;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--primaryBackground);
+}
+.bill-detail-order-items-heading {
+    font-weight: 900;
+    font-size: 1.2rem;
+    border-bottom: 2px solid var(--fadedText);
+    padding: 0 0 0.2rem 0;
+}
+
+.bill-detail-order-items-item .item, .bill-detail-order-items-heading .item{
+    text-align: left;
+}
+
+.bill-detail-order-subtotal, .bill-detail-order-tax, .bill-detail-order-service-charge, .bill-detail-order-discount {
+    font-size: 1.1rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    color: var(--fadedText);
+    margin: 0.5rem 0;
+}
+
+.bill-detail-order-total {
+    margin: 0.5rem 0 0 0;
+    padding: 2rem 0 0 0;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 900;
+    display:flex;
+    justify-content:space-between;
+    color: var(--primaryBackground);
+    position:relative;
+}
+
+.bill-detail-order-total::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left:0;
+    height: 2px;
+    width: 100%;
+    background: var(--fadedText);
+    margin: 0 0 4rem 0;
+}
+
+/* ------- settlement --------------------------- */
+.bill-detail-settlement-error {
+    padding: 0.5rem 0;
+    color: red;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+.bill-detail-settlement form {
+    display:flex;
+    flex-direction: column;
+}
+
+.bill-detail-settlement-note, 
+.bill-detail-settlement-discount,
+.bill-detail-settlement-payment{
+    margin: 0 0 1rem 0;
+    color: var(--primaryBackground);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.bill-detail-settlement-note textarea, 
+.bill-detail-settlement-discount input,
+.bill-detail-settlement-payment select {
+    width: 100%;
+    padding:0.5rem;
+    font-size: 1rem;
+    outline: none;
+    font-weight: bold;
+    border-radius: 0.2rem;
+    border: 2px solid var(--primaryBackground);
+    resize: none;
+    color: var(--fadedText);
+    margin: 0.1rem 0 0 0;
+}
+
+.bill-detail-settlement-actions {
+    /* margin: 0.5rem 0; */
+    color: white !important;
+    text-align: left;
+}
+
+.bill-detail-settlement-actions button{
+    font-size: 1.1rem;
+    margin: 0.5rem 1rem 0.5rem 0;
+    border-radius: 0.2rem;
+    color: white;
+    padding: 0 1.5rem;
+}
+
+.bill-detail-settlement-actions-settle {
+    background: var(--primaryBackground);
+    border: 2px solid var(--primaryBackground);
+}
+
+.bill-detail-settlement-actions-receipt {
+    background: var(--secondaryText);
+    border: 2px solid var(--secondaryText);
+}
+
+.bill-detail-settlement-qr {
+    padding: 1rem;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.432);
+    width: 185px;
+}
+
+.bill-detail-loader {
+    background: #ffffff;
+    height: 70vh;
+    display:grid;
+    place-items: center;
+    font-size: 4rem;
+    font-weight: 900;
+    color:var(--primaryBackground);
+}
+
+.bill-detail-loader svg {
+    animation:loader ease infinite 0.8s;
+}
+
+@media screen and (max-width: 600px) {
+    .bill-detail{
+        padding:2rem 1rem;
+    }
+    .bill-detail-wrapper {
+        grid-template-columns: 100%; 
+    }
+}
+
+
+@media only screen and (min-width: 600px) {
+    .bill-detail {
+        padding: 2rem 1rem;
+    }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .bill-detail {
+        padding: 2rem 2rem;
+    }
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .bill-detail {
+        padding: 2rem 2rem;
+    }
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .bill-detail {
+        padding: 2rem 5rem;
+    }
+}
+
+@media only screen and (min-width: 1500px) {
+    .bill-detail {
+        padding: 2rem 10rem;
+    }
+}

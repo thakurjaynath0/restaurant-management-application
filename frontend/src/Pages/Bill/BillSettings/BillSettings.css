@@ -1,0 +1,185 @@
+.bills-settings {
+    /* display:block; */
+    /* background: #000; */
+    margin: 0 1rem;
+}
+
+.bills-setings-origin {
+    width: 100%;
+    /* padding: 0 0.5rem; */
+}
+
+.bills-settings-origin-content {
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: var(--primaryBackground);
+    display: flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:space-between;
+    /* width: 2.5rem; */
+    padding: 0.6rem;
+    background: #ffffff;
+    border-radius: 0.3rem;
+    cursor: pointer;
+}
+
+.bills-settings-origin-content > svg {
+    margin:0 0rem;
+}
+
+.bills-settings-wrapper {
+    position: fixed;
+    /* background: #000; */
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background: rgba(255,255,255,0.7); */
+}
+
+.bills-settings-settings {
+    background: var(--secondaryText);
+    padding: 3rem 1rem 1rem 1rem;
+    border-radius: 0.3rem;
+    position: relative;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    width: 30%;
+
+    display:grid;
+    grid-template-areas:
+        'settings-limit'
+        'settings-actions'
+    ;
+    column-gap:2rem;
+}
+
+.bills-settings-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: red;
+    border: 3px solid red;
+    padding: 0.3rem;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: white;
+    border-radius: 0 0.3rem 0 0 ;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.bills-settings-close svg {
+    transform: translateY(0.25rem);
+    stroke-width: 1.5rem;
+}
+
+.bills-settings-close:hover{
+    background: none;
+}
+
+.bills-settings-limit{
+    grid-area: settings-limit;
+}
+
+
+.bills-settings-limit > label{
+    display:flex;
+    flex-direction: column;
+}
+
+.bills-settings-limit input {
+    width: 100%;
+    height: 2.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    outline: none;
+    padding: 0 0.5rem;
+}
+
+.bills-settings-actions {
+    grid-area:settings-actions;
+    margin: 1rem 0 0 0;
+    display:grid;
+    grid-template-columns:45% 45%;
+    column-gap: 10%;
+    font-size: 1.1rem;
+}
+
+.bills-settings-actions-save {
+    background: green;
+    border: 3px solid green;
+    color: var(--fadedBackground);
+}
+.bills-settings-actions-clear {
+    background: var(--primaryBackground);
+    border: 3px solid var(--primaryBackground);
+    color: var(--fadedBackground);
+}
+
+.bills-settings-actions button {
+    transition: all 0.3s ease;
+}
+
+.bills-settings-actions > button:hover {
+    background: none;
+}
+
+
+@media only screen and (max-width: 600px) { 
+    .bills-settings-wrapper {
+        align-items: flex-end;
+    }
+    .bills-settings-settings{
+        width: 100%;
+        border-radius: 2rem 2rem 0 0;
+        animation:popup 0.3s ease 1;
+        min-height: 25rem;
+        grid-auto-rows: min-content;
+    }
+    .bills-settings-close {
+        top: 0.3rem;
+        right: 0.3rem;
+        border-radius: 0 2rem 0 0;
+    }
+    .bills-settings-close svg {
+        transform: translate(-0.1rem, 0.3rem)
+    }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .bills-settings-settings{
+        width: 80%;
+    }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .bills-settings-settings{
+        width: 65%;
+    }
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .bills-settings-settings{
+        width: 55%;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .bills-settings-settings{
+        width: 45%;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1500px) {
+    .bills-settings-settings{
+        width: 30%;
+    }
+}

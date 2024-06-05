@@ -1,0 +1,32 @@
+.home .tabs-container{
+    padding: 2rem;
+    display: grid;
+    /* background: #000; */
+    grid-template-columns: 45% 45%;
+    grid-gap: 10%;
+}
+
+
+@media screen and (min-width:650px){
+    .home .tabs-container{
+        grid-template-columns:30% 30% 30%;
+        column-gap: 5%;
+        margin: 2rem 2rem;
+    }
+}
+
+@media screen and (min-width:1000px){
+    .home .tabs-container{
+        grid-template-columns:20% 20% 20% 20%;  
+        column-gap: 6.67%;
+        margin: 2rem 5rem;
+    }
+}
+
+@media screen and (min-width:1300px){
+    .home .tabs-container{
+        margin: 2rem 8rem;
+        grid-template-columns: 15% 15% 15% 15% 15% ;
+        column-gap: 6.25%;
+    }
+}

@@ -1,0 +1,21 @@
+.tab{
+    background: var(--primaryBackground);
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction:column;
+    font-size: 1.2rem;
+    color: var(--fadedBackground);
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.tab svg{
+    color: var(--fadedBackground);
+    font-size: 1.5rem;
+}
+
+.tab .tab-title {
+    padding: 0.5rem;
+}

@@ -1,0 +1,100 @@
+.select-table-order{
+    background-color: rgba(145, 145, 145, 0.8);
+    position: absolute;
+    top: 0;
+    padding: 5rem 0;
+    width: 100%;
+    height: 106vh;
+    display: none;
+    overflow: hidden;
+}
+.select-table-order.active{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.select-table-order .select{
+    min-height: 20rem;
+    width: 40%;
+    background-color: rgb(255,255,255);
+    border-radius: 5px;
+    padding: 1rem;
+    position: relative;
+}
+.select input{
+    padding: 0.75rem;
+    background-color: rgba(224, 224, 224, 0.5);
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+.select input::placeholder{
+    font-size: 1rem;
+}
+
+.select-table-title{
+    font-size: 1.2rem;
+    color: var(--primaryBackground);
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+}
+.select .tables-menu-items{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+.tables-loading{
+    height: 100%;
+    height: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+.select .select-table-btns{
+    position: absolute;
+    bottom: 1rem;
+    right: 0;
+    width: 100%;
+    display: flex;
+    /* align-items: center; */
+    /* justify-content: center; */
+    padding:  0 1rem;
+}
+.select-table-btns.active{
+    padding: auto;
+ 
+}
+
+.select-table-btns button{
+    width: 90%;
+    background-color: var(--primaryBackground);
+    color: rgb(255,255,255);
+    font-size: 1.1rem;
+
+}
+.select-table-btns button:nth-child(1){
+    margin-right: 5%;
+}
+.select-table-btns button:nth-child(2){
+    margin-left: 5%;
+}
+.select-table-btns button.active{
+    width: 100%;
+    margin: 0 !important;
+    
+
+
+}
+.select-table-btns .return-btn{
+    background-color: red;
+}
+@media screen and (max-width: 650px) {
+    .select-table-order .select{
+        width: 90%;
+       
+    }
+
+
+}

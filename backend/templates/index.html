@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Himalayan Cafe</title>
+</head>
+<body>
+    <h1>Himalayan Cafe</h1>
+    <br>
+        <form id="login-form">
+            <fieldset style="width:250px">
+                <legend> Login </legend><br>
+                <p id="login-error" style="color:red;font-size: 0.8rem;"></p>
+                <input type="text" name="username" id="username" placeholder="Username"/><br><br>
+                <input type="password" name="password" id="password" placeholder="Password"/><br><br>
+                <input type="submit" value="Login" />
+            </fieldset>
+        </form><br>
+        <button id="logout-btn">Logout</button>
+        
+</body>
+<script >
+    document.querySelector("#login-form").onsubmit = async (e) => {
+        e.preventDefault();
+        try {
+            let resp = await fetch('/api/v1/users/auth/login',{
+                method:'POST',
+                headers:{
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify({
+                    username: e.target[1].value,
+                    password: e.target[2].value
+                })
+            })
+            if(resp.status === 200){
+                e.target.reset()
+                document.querySelector('#login-error').innerHTML = '';
+                return alert('Logged In ');
+            }
+            let json = await resp.json();
+            throw new Error(json?.msg || "Something went wrong .")
+        } catch (err) {
+            document.querySelector('#login-error').innerHTML = err.message;
+        } 
+    }
+
+    document.querySelector("#logout-btn").onclick = async (e) => {
+        e.preventDefault();
+        try{
+            let resp = await fetch('/api/v1/users/auth/logout');
+            if(resp.status === 200) {
+                return alert('logged out .');
+            }
+            throw new Error('Could not log out.')
+        } catch (err) {
+            alert(err.message);
+        }
+    }
+</script>
+</html>

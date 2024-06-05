@@ -1,0 +1,245 @@
+.bills-filter {
+    display:block;
+    /* background: #000; */
+    /* margin: -1rem 0 2rem 0; */
+}
+
+.bills-filter-origin {
+    width: 100%;
+    /* padding: 0 0.5rem; */
+}
+
+.bills-filter-origin-content {
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: var(--primaryBackground);
+    display: flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:space-between;
+    width: 8rem;
+    padding: 0.5rem;
+    background: #ffffff;
+    border-radius: 0.3rem;
+    cursor: pointer;
+}
+
+.bills-filter-origin-content > svg {
+    margin:0 1rem;
+}
+
+.bills-filter-wrapper {
+    position: fixed;
+    /* background: #000; */
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.7);
+}
+
+.bills-filter-filter {
+    background: var(--secondaryText);
+    padding: 3rem 1rem 1rem 1rem;
+    border-radius: 0.3rem;
+    position: relative;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    width: 30%;
+
+    display:grid;
+    grid-template-areas:
+        'filter-settled filter-payment'
+        'filter-order filter-order'
+        'filter-total filter-total'
+        'filter-discount filter-discount'
+        'filter-date filter-date'
+        'filter-actions filter-actions'
+    ;
+    column-gap:2rem;
+}
+
+.bills-filter-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: red;
+    border: 3px solid red;
+    padding: 0.3rem;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: white;
+    border-radius: 0 0.3rem 0 0 ;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.bills-filter-close svg {
+    transform: translateY(0.25rem);
+    stroke-width: 1.5rem;
+}
+
+.bills-filter-close:hover{
+    background: none;
+}
+
+
+.bills-filter-settled {
+    grid-area:filter-settled;
+}
+
+.bills-filter-payment{
+    grid-area: filter-payment;
+}
+
+.bills-filter-order{
+    grid-area: filter-order;
+}
+
+.bills-filter-total{
+    grid-area: filter-total;
+}
+
+.bills-filter-discount{
+    grid-area: filter-discount;
+}
+
+.bills-filter-date {
+    grid-area: filter-date;
+}
+
+.bills-filter-settled,
+.bills-filter-payment,
+.bills-filter-order,
+.bills-filter-total,
+.bills-filter-discount,
+.bills-filter-date  {
+    margin: 0.5rem 0;
+    width: 100%;
+    display: block;
+}
+
+.bills-filter-settled select,
+.bills-filter-payment select {
+    width: 100%;
+    height: 2rem;
+    outline: none;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.bills-filter-order,
+.bills-filter-total,
+.bills-filter-discount,
+.bills-filter-date > label{
+    display:flex;
+    flex-direction: column;
+}
+
+.bills-filter-order .inputs,
+.bills-filter-total .inputs,
+.bills-filter-discount .inputs,
+.bills-filter-date .inputs {
+    display: grid;
+    grid-template-columns: 45% 45%;
+    column-gap: 10%;
+    background: var(--fadedText);
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+}
+
+.bills-filter-order .inputs input,
+.bills-filter-total .inputs input,
+.bills-filter-discount .inputs input,
+.bills-filter-date .inputs input {
+    width: 100%;
+    height: 2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    outline: none;
+    padding: 0 0.5rem;
+}
+
+.bills-filter-actions {
+    grid-area:filter-actions;
+    margin: 1rem 0 0 0;
+    display:grid;
+    grid-template-columns:45% 45%;
+    column-gap: 10%;
+    font-size: 1.1rem;
+}
+
+.bills-filter-actions-save {
+    background: green;
+    border: 3px solid green;
+    color: var(--fadedBackground);
+}
+.bills-filter-actions-clear {
+    background: var(--primaryBackground);
+    border: 3px solid var(--primaryBackground);
+    color: var(--fadedBackground);
+}
+
+.bills-filter-actions button {
+    transition: all 0.3s ease;
+}
+
+.bills-filter-actions > button:hover {
+    background: none;
+}
+
+
+@media only screen and (max-width: 600px) { 
+    .bills-filter-wrapper {
+        align-items: flex-end;
+    }
+    .bills-filter-filter{
+        width: 100%;
+        border-radius: 2rem 2rem 0 0;
+        animation:popup 0.3s ease 1;
+    }
+    .bills-filter-close {
+        top: 0.3rem;
+        right: 0.3rem;
+        border-radius: 0 2rem 0 0;
+    }
+    .bills-filter-close svg {
+        transform: translate(-0.1rem, 0.3rem)
+    }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .bills-filter-filter {
+        width: 80%;
+    }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .bills-filter-filter {
+        width: 65%;
+    }
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .bills-filter-filter {
+        width: 55%;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .bills-filter-filter {
+        width: 45%;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1500px) {
+    .bills-filter-filter {
+        width: 30%;
+    }
+}
